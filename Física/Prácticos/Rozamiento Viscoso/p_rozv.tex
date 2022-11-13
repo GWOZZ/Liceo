@@ -1,0 +1,193 @@
+\documentclass{article}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{esvect}
+\usepackage{pgfplots, pgfplotstable}
+\pgfplotsset{width=9cm, compat=1.9}
+\setlength\parindent{0pt}
+\tolerance=9999
+\hyphenpenalty=10000
+\exhyphenpenalty=100
+\graphicspath{ {./images/} }
+
+\title{Práctico de Rozamiento Viscoso}
+\author{Guillermo Wajner, Matías Vicente et al.}
+\date{6 de junio de 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+En el presente informe de práctica de laboratorio se buscará determinar el exponente $(\alpha)$ de la velocidad de la ecuación de la fuerza del rozamiento viscoso a travéz de datos obtenidos experimentalmente.
+
+\section{Objetivo}
+
+Determinar el valor de $\alpha$ desde la ecuación del rozamiento viscoso. 
+
+\section{Marco Teorico}
+La fuerza de rozamiento es definida como el resultante de la colisión entre dos cuerpos a causa de las ¨imperfecciones¨ de sus superficies. A su vez, el rozamiento viscoso, que es el participante en esta situación, actúa cuando un cuerpo se desplaza con la necesidad de colisionar con las partículas de un fluido para así apartarlas. El rozamiento viscoso es dependiente de varios factores, como por ejemplo la forma del objeto, la naturaleza del fluido o la velocidad del objeto en cuestión.
+\\
+\\
+Para el movimiento de un cuerpo en caída donde se produce rozamiento viscoso con el aire se cumple que:
+
+$$v=k \ \forall \ \Delta t>1\Rightarrow \frac{\Delta x}{\Delta t}=k \ \forall \ \Delta t>1$$
+
+Esto quiere decir que pasado un segundo de movimiento el cuerpo alcanza una aceleración igual a 0.
+
+\pagebreak
+
+Por lo tanto, según la segunda ley de  Newton, la fuerza neta ($\vec{N}$) es nula. Esto quiere decir la suma de los vectores de ambas fuerzas que actúan sobre este objeto ($F_{roz}$ y $m\cdot g$) es igual a 0. Teniendo esto en cuenta, para un $\Delta t>1$ el siguiente sería el diagrama de cuerpo libre del cuerpo:
+
+\begin{figure}[H]
+\begin{center}
+\begin{tikzpicture}
+                \begin{scope}
+                \filldraw (0,0) circle (3pt);
+                \path(L) -- (Q) coordinate[pos=0.5](G2);
+                \draw[-latex] (G2) -- ++(0,-1.5)node[right]{$m\cdot g$};
+                 \draw[-latex] (G2) -- ++(0,1.5)node[right]{$F_{roz}$};
+                \end{scope}
+\end{tikzpicture}
+\end{center}
+\end{figure}
+
+Por lo tanto, $F_{roz}=m\cdot g$.
+\\
+\\
+Es sabido que la fuerza de rozamiento viscosa ($F_{roz}$) es proporcional a la $\alpha$ -ésima potencia de la velocidad ($v$), por lo tanto:
+
+$$F_{roz}=C\cdot v^\alpha \mid C \text{ es constante}$$
+
+Partiendo de estas igualdades se cumple que:
+
+$$C\cdot v^\alpha=m\cdot g$$
+
+Operando es posible llegar a la siguiente ecuación:
+
+\begin{equation}
+\label{eqn:alpha}
+\log N= \varnothing +\alpha \log v \mid m'\cdot N = m_{total}
+\end{equation}
+
+\section{Procedimiento}
+Para realizar el práctico se decidió que un participante dejara caer los pirotín desde una altura escogida ($\Delta x$) de \qty[mode = text] {2,07} {m}, marcada anteriormente con un lápiz en la pared, mientras que otro participante se encargaría de controlar el tiempo que estos tardaran en caer. Este proceso de la caída se repitió con distinta cantidad de pirotines, de uno a cinco, con una repetición de diez tiradas para cada cantidad de pirotines.
+\pagebreak
+
+\section{Datos Obtenidos}
+Al concluir con las repeticiones fueron obtenidos diversos valores de $t$ en segundos, siendo estos los prensentes en la siguiente tabla.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\rowcolor[HTML]{CACACA} 
+N° de Pirotines & 1 & 2 & 3 & 4 & 5 \\ \hline
+\cellcolor[HTML]{CACACA} & 1.95 & 1.14 & 1.13 & 0.88 & 0.86 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 2.01 & 1.14 & 0.97 & 0.85 & 0.85 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.66 & 1.18 & 1.04 & 0.86 & 0.87 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.94 & 1.06 & 1.02 & 0.94 & 0.88 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.65 & 1.14 & 1.02 & 0.89 & 0.89 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.58 & 1.12 & 0.96 & 0.92 & 0.82 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 2.00 & 1.18 & 1.01 & 0.96 & 0.78 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.72 & 1.07 & 1.10 & 0.78 & 0.84 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.93 & 1.01 & 1.05 & 0.98 & 0.85 \\ \cline{2-6} 
+\multirow{-10}{*}{\cellcolor[HTML]{CACACA}$\Delta t$ (s)} & 2.00 & 1.27 & 1.13 & 0.82 & 0.86 \\ \hline
+\end{tabular}
+\caption{valores de $t$ obtenidos}
+\label{table:tvalues}
+\end{table}
+
+\section{Procesamiento de Datos}
+Con los datos obtenidos de $t$ fue hallado el tiempo promedio ($\overline{t}$) para cada cantidad de pirotines. A su vez, con la altura previamente establecida como \qty[mode = text] {2,07} {m}, fue calculada la velocidad como $v=\frac{\qty[mode = text] {2,07} {m}}{\Delta t}$. Posteriormente fue calculado el logaritmo de $v$ y de $N$ siendo $N$ la cantidad de pirotines en la caída. 
+\\
+\\
+El cuadro 2 a continuación presenta los datos mencionados.
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+\rowcolor[HTML]{CACACA} 
+N° de Pirotines & 1 & 2 & 3 & 4 & 5 \\
+\hline
+\cellcolor[HTML]{CACACA} & 1.95 & 1.14 & 1.13 & 0.88 & 0.86 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 2.01 & 1.14 & 0.97 & 0.85 & 0.85 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.66 & 1.18 & 1.04 & 0.86 & 0.87 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.94 & 1.06 & 1.02 & 0.94 & 0.88 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.65 & 1.14 & 1.02 & 0.89 & 0.89 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.58 & 1.12 & 0.96 & 0.92 & 0.82 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 2 & 1.18 & 1.01 & 0.96 & 0.78 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.72 & 1.07 & 1.1 & 0.78 & 0.84 \\ \cline{2-6} 
+\cellcolor[HTML]{CACACA} & 1.93 & 1.01 & 1.05 & 0.98 & 0.85 \\ \cline{2-6} 
+\multirow{-10}{*}{\cellcolor[HTML]{CACACA}$\Delta t$ (s)} & 2 & 1.27 & 1.13 & 0.82 & 0.86 \\ \hline
+\rowcolor[HTML]{FFFFFF} 
+\cellcolor[HTML]{CACACA}$\overline{t}$ (s) & 1.845 & 1.131 & 1.043 & 0.888 & 0.85 \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\cellcolor[HTML]{CACACA}$\log N$ & 0 & 0.30103 & 0.47712 & 0.60206 & 0.69897 \\ \hline
+\rowcolor[HTML]{FFFFFF} 
+\cellcolor[HTML]{CACACA}$v$ (m/s) & 1.12195 & 1.83024 & 1.98466 & 2.33108 & 2.43529 \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\cellcolor[HTML]{CACACA}$\log v$ & 0.04997 & 0.26251 & 0.29769 & 0.36756 & 0.38655 \\ \hline
+\end{tabular}
+\caption{manipulación de datos}
+\label{table:procesamiento}
+\end{table}
+
+\pagebreak
+Considerando que la ecuación 1 es una ecuación lineal de pendiente $\alpha$, al realizar un gráfico de dispersión con los datos obtenidos de $\log N$ en función de $\log v$, $\alpha$ será aproximadamente igual al valor de la pendiente de la línea de tendencia de la serie. En la figura 1 a continuación se muestra lo explicado.
+
+\begin{figure}[H]
+\centering
+\pgfplotstableread{
+X Y
+0.049973975 0
+0.26250774 0.30103
+0.29768604 0.47712125
+0.36755738 0.60205999
+0.38655142 0.69897
+}\datatable
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$x=log(v)$},
+    ylabel={$y=log(N)$},
+    xmin=0, xmax=0.45,
+    ymin=0, ymax=0.8,
+    xticklabel style={
+            /pgf/number format/fixed,
+            /pgf/number format/precision=2,
+            /pgf/number format/fixed zerofill
+        },
+    yticklabel style={
+            /pgf/number format/fixed,
+            /pgf/number format/precision=2,
+            /pgf/number format/fixed zerofill
+        },
+    ytick distance=0.1,
+    enlargelimits=false,
+    legend pos=outer north east
+]
+\addplot [only marks, mark = *] table {\datatable};
+    \label{pgfplots:label1}
+\addplot [thick, red] table[y={create col/linear regression={y=Y}}]{\datatable};
+    \label{pgfplots:label2}
+\addlegendentry{$log(N)\pm \delta$}
+\addlegendentry{$\pgfmathprintnumber{\pgfplotstableregressiona}x\pgfmathprintnumber[print sign]{\pgfplotstableregressionb}$}
+\end{axis}
+\end{tikzpicture}
+\label{fig:graf}
+\caption{gráfico de dispersión con linea de tendencia}
+\end{figure}
+
+Análisando el gráfico es posible observar que la linea de tendencia obtenida tiene la forma $y=2.01x-0.13 \text{ por lo tanto }\alpha\approx2.01$.
+
+
+\section{Conclusión}
+Ya con el valor experimental de $\alpha$ obtenido, este  fue comparado con el valor teórico de $\alpha$. Los datos recabados en el experimento corresponden a un $\alpha \approx 2.01$ que es cercano al valor real $\alpha=2$. Por esto mismo es posible considerar al experimento como exitoso, a pesar de que es posible implementar nuevos métodos de medición para su afinación.
+\end{document}

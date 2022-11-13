@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{unicode-math}
+\setlength\parindent{0pt}
+\tolerance=9999
+\hyphenpenalty=10000
+\exhyphenpenalty=100
+\graphicspath{ {./images/} }
+
+\title{Estudio de la Relación entre el Trabajo y la Energía mecánica}
+\author{Martín Vázquez, Matias Vicente y Guillermo Wajner}
+\date{28 de agosto de 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducci\'{o}n}
+
+El presente informe de laboratorio ha sido realizado en base a los datos recabados de forma experimental con el propósito de investigar de qué forma se vinculan el trabajo y la energía mecánica conforme al desplazamiento de un dispositivo rodado en un plano inclinado.
+
+\section{Objetivo}
+
+Determinar la relación entre el trabajo y la energía mecánica.
+
+\section{Marco Te\'{o}rico}
+
+Cuando una fuerza mueve su punto de aplicación una distancia y existe una componente de dicha fuerza paralela al desplazamiento, la fuerza efectúa trabajo. En el caso en que la fuerza aplicada sea constante y el desplazamiento sea unidimensional, entiéndase por trabajo el producto de la componente de la fuerza paralela al desplazamiento por el desplazamiento. Entonces para una fuerza con ángulo $\theta$ respecto al desplazamiento, el trabajo de una fuerza aplicada sobre un cuerpo será la siguiente
+
+\begin{equation}
+W_F =F \times \cos \theta \times d
+\label{equation:W}
+\end{equation}
+
+Por otra parte, la energía cinética $E_k$ de un cuerpo es aquella que este posee debido a su movimiento. Esta puede ser calculada como la mitad del producto de su masa y el cuadrado de su velocidad.
+
+\begin{equation}
+E_k = \frac{m\times v^2}{2}
+\label{equation:k}
+\end{equation}
+
+\pagebreak
+
+La energía potencial gravitatoria de un cuerpo hace referencia a la energía poseída debido a la altura del mismo respecto a un plano de referencia; esta puede ser calculada como el producto de la masa $m$, la aceleración gravitacional $g$ y la altura $h$ mencionada.
+
+\begin{equation}
+E_{pg} = m \times g \times h
+\end{equation}
+
+La energía potencial elástica es la energía almacenada como resultado de una deformación en un cuerpo elástico, por lo cual es nula en un sistema carente de estos.
+\\
+\\
+La energía mecánica es aquella dependiente del movimiento y posición del mismo, entonces esta es la suma de la energía cinética, potencial gravitatoria y potencial elástica del sistema a estudiar.
+
+\begin{equation}
+E_m = E_k + E_{pg} + E_{pe}
+\label{equation:em}
+\end{equation}
+
+\section{Procedimiento}
+
+Para realizar el experimento, fue colocada una rampa de longitud \qty{0,622}{m} a un ángulo determinado $\theta$ para a continuación hacer subir a un dispositivo rodado de masa \qty{0,0673}{kg} a velocidad constante hasta la cima de la rampa, utilizando un dinamómetro para medir la fuerza ejercida sobre el cuerpo. Este mismo procedimiento fue repetido, variando el ángulo de inclinación de la rampa entre iteraciones
+
+\section{Procesamiento de Datos}
+
+Los datos obtenidos del proceso descrito pueden ser observados en el cuadro 1 a continuación:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Iteración (\#) & Altura (m) & Ángulo (°) & Fuerza (N) \\ \hline
+1 & 0,147 & 13,7 & 0,14 \\ \hline
+2 & 0,265 & 25,2 & 0,25 \\ \hline
+3 & 0,318 & 30,7 & 0,30 \\ \hline
+\end{tabular}
+\caption{Datos Obtenidos}
+\label{table:mediciones}
+\end{table}
+
+La fuerza medida con el dinamómetro debería ser igual al componente paralelo a la rampa de la fuerza peso, igual al producto de la masa, la aceleración gravitatoria y el coseno del ángulo complementario de $\theta$.
+\\
+\\
+De acuerdo a lo establecido en la ecuación 2, ya que la velocidad de movimiento producida fue constante, la variación de la energía cinética es igual a \qty{0}{J}. Lo mismo sucede con la variación de la energía potencial elástica, ya que no existen cuerpos elásticos en el sistema.  Entonces, según la ecuación \ref{em} la variación de la energía mecánica del sistema será igual a variación de la energía potencial gravitatoria del mismo. Así, para una altura inicial igual a \qty{0}{m}, se cumple que:
+
+\begin{equation}
+\Delta E_m = m \times g \times h_f
+\end{equation}
+
+Al calcular la misma utilizando los valores de altura de la rampa registrados obtenemos los siguientes resultados:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Iteración (\#) & $\Delta E_m$ (J) \\ \hline
+1 & 0,0971 \\ \hline
+2 & 0,175 \\ \hline
+3 & 0,210 \\ \hline
+\end{tabular}
+\caption{Cálculo de $\Delta E_m$}
+\label{table:calculoem}
+\end{table}
+
+Por último, al calcular el trabajo de la fuerza indicada por el dinamómetro utilizando la ecuación \ref{w} obtenemos los siguientes resultados:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Fuerza (N) & $W_F$ (J) \\ \hline
+0,14 & 0,0871 \\ \hline
+0,25 & 0,156 \\ \hline
+0,30 & 0,187 \\ \hline
+\end{tabular}
+\caption{Cálculo de $W_F$}
+\label{table:calculowf}
+\end{table}
+
+\section{Conclusi\'{o}n}
+
+Tras realizar una comparación entre los resultados obtenidos para la misma iteración en los cuadros 2 y 3, es posible decir que la diferencia observada entre la variación de la energía mecánica y el trabajo de las fuerzas no conservativas es siempre menor a 0,025 J, diferencia atribuíble a errores experimentales. De esta observación es posible concluir lo siguiente:
+
+\begin{equation}
+\Delta E_m = W_{\text{$no$ $conservativas$}}
+\end{equation}
+
+\end{document}

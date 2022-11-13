@@ -1,0 +1,208 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{multirow}
+\usepackage{tabularray}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\setlength\parindent{0pt}
+\tolerance=9999
+\hyphenpenalty=10000
+\exhyphenpenalty=100
+\graphicspath{ {./images/} }
+
+\newcommand*{\TitleParbox}[1]{\parbox[c]{1.75cm}{\raggedright #1}}
+
+\begin{document}
+
+\title{\textbf{Propiedades de los Líquidos}
+\\
+\text{\phantom{xd}}
+\\
+\large Presión de Vapor, Tensión Superficial y Viscosidad}
+\author{Martín Vázquez, Matias Vicente y Guillermo Wajner}
+\date{Agosto 2022}
+
+\maketitle
+
+\section{Introducci\'{o}n}
+
+En el presente informe de pr\'{a}ctica de laboratorio se realiza un estudio de las propiedades presentes en el estado líquido mediante una actividad experimental.
+
+\section{Objetivos}
+
+\begin{itemize}
+    \item[-]Estudiar propiedades de los líquidos.
+    \item[-]A partir de los resultados experimentales establecer la incidencia de las fuerzas atractivas entre las partículas en las propiedades de una sustancia en estado líquido.
+\end{itemize}
+
+\section{Marco Te\'{o}rico}
+
+Dentro de las características de los líquidos a estudiar se encuentran la presión de vapor, viscosidad y la tensión superficial.
+\\
+\\
+\textbf{Presión de Vapor}
+\\
+\\
+En cuanto un líquido es sometido a un sistema cerrado, al pasar determinado tiempo, este, comenzará a evaporarse, y como consecuencia a este fenómeno físico la presión ejercida por el vapor del líquido aumentará. Mediante incrementa el número de moléculas en estado de vapor, de igual manera aumentará la probabilidad de que estas choquen con la superficie del líquido y las mismas retornen a su estado natural (líquido), provocando un “equilibrio dinámico” entre la velocidad con la que las moléculas vuelven al estado líquido y con la que pasan al estado gaseoso. Al momento de darse esta situación la presión que ejerce el vapor del líquido, cuando este se encuentra en equilibrio dinámico con el líquido, es denominada presión de vapor. 
+\\
+\\
+\textbf{Viscosidad}
+\\
+\\
+La viscosidad es una medida de la resistencia a fluir que un fluido presenta. La viscosidad se relaciona con la facilidad con la que las moléculas de un fluido se mueven unas respecto a otras, dependiendo de las fuerzas intermoleculares del fluido en cuestión. La velocidad de un cuerpo cayendo dentro de un fluido será menor  cuanto más viscoso sea el medio. Al aumentar la temperatura del fluido y por tanto la energía cinética de sus partículas componentes,  aumenta también la viscosidad del mismo.
+\\
+\\
+\textbf{Tensión superficial}
+\\
+\\
+Todos los líquidos presentan una propiedad característica la cual se presenta en la superficie del líquido; Esta funciona como una especie de “manto elástico”. Este “manto” es creado por un desequilibrio de las fuerzas intermoleculares en la superficie del líquido el cual resulta en que aunque estas sean omnidireccionales, la fuerza neta de la superficie sea únicamente hacia el centro del líquido. Ya que estas fuerzas van hacia el centro, las moléculas de la superficie son apelotonadas, por tanto a mayor fuerza intermolecular mayor será la tensión superficial.
+
+\section{Materiales, Sustancias y Soluciones}
+
+\begin{itemize}
+
+    \item[-]Vaso de bohemia
+    \item[-]Pipeta graduada.
+    \item[-]Espátula
+    \item[-]Cuentagotas
+    \item[-]Vidrio reloj
+    \item[-]Agua ($\text{H}_{\text{2}}\text{O}$)
+    \item[-]Etanol ($\text{C}_{\text{2}}\text{H}_{\text{5}}\text{OH}$)
+    \item[-]Glicerina ($\text{C}_{\text{3}}\text{H}_{\text{8}}\text{O}_{\text{3}}$)
+    \item[-]Detergente
+    \item[-]Azufre en polvo (S)
+    
+\end{itemize}
+
+\newpage
+
+\section{Procedimiento}
+
+Parte 1: Presión de Vapor
+
+\begin{enumerate}
+    \item Destapar los frascos de los líquidos a analizar (agua, etanol y glicerina).
+    \item Colocar 5,0 mL de cada uno en respectivos tubos de ensayo, y luego de 24 horas registrar observaciones.
+\end{enumerate}
+
+Parte 2: Viscosidad
+
+\begin{enumerate}
+    \item Tomar 10,0 mL de líquido con la pipeta.
+    \item Transferir a un vaso de bohemia midiendo el tiempo que el mismo demora en caer.
+    \item Repetir el procedimiento con cada líquido a analizar.
+    \item Calentar el líquido más viscoso hasta que alcance aproximadamente 40°C y repetir el procedimiento.
+\end{enumerate}
+
+Parte 3: Tensión Superficial
+
+\begin{enumerate}
+    \item Colocar en un vidrio reloj una gota de cada líquido y observar la forma de las mismas.
+    \item Colocar 20 mL de cada líquido en respectivos vasos de bohemia y espolvorear cada uno con azufre en polvo sin agitar.
+    \item En otro vaso colocar agua con detergente y repetir el procedimiento.
+\end{enumerate}
+
+\pagebreak
+
+\section{Procesamiento de Datos}
+
+Parte 1: Presión de Vapor
+\\
+\\
+En el cuadro a continuación se observan los datos hallados sobre los líquidos a estudiar
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{3.2cm}|m{3cm}|m{5cm}|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Sustancia & Punto de Ebullición Normal ($^\circ C$) & Presión de Vapor a Temperatura Estándar ($torr$) \\ \hline
+Etanol ($\text{C}_{\text{2}}\text{H}_{\text{5}}\text{OH}$) & 78,4 & 20,0 \\ \hline
+Agua ($\text{H}_{\text{2}}\text{O}$) & 100 & 23,8 \\ \hline
+Glicerina ($\text{C}_{\text{3}}\text{H}_{\text{8}}\text{O}_{\text{3}}$) & 290 & $1,58\times10^{-4}$ \\ \hline
+\end{tabular}
+\caption{información buscada sobre los líquidos}
+\label{datos}
+\end{table}
+
+24 horas trás colocar los líquidos en los tubos de ensayo expuestos al ambiente, el volumen líquido de etanol fue menor que el de agua y el de agua fue menor que el de glicerina.
+\\
+\\
+Parte 2: Viscosidad
+\\
+\\
+El siguiente cuadro muestra las medidas obtenidas del tiempo necesario para que cada líquido salga completamente de la pipeta.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{3.4cm}|m{4cm}m{4cm}|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Sustancia & \multicolumn{2}{l|}{\cellcolor[HTML]{C0C0C0}Tiempo ($s$)} \\ \hline
+Etanol ($\text{C}_{\text{2}}\text{H}_{\text{5}}\text{OH}$) & \multicolumn{2}{l|}{6,25} \\ \hline
+Agua ($\text{H}_{\text{2}}\text{O}$) & \multicolumn{2}{l|}{7,00} \\ \hline
+ & \multicolumn{1}{l|}{A temperatura ambiente} & A $40^\circ C$ \\ \cline{2-3} 
+\multirow{-2}{*}{Glicerina ($\text{C}_{\text{3}}\text{H}_{\text{8}}\text{O}_{\text{3}}$)} & \multicolumn{1}{l|}{36,0} & 14,0 \\ \hline
+\end{tabular}
+\caption{registro de datos temporales}
+\label{viscosidad}
+\end{table}
+
+Parte 3: Tensión Superficial
+\\
+\\
+En cuanto a las gotas colocadas en el vidrio reloj, fue posible diferenciar la forma de las mismas en cada una de las sustancias, como es representado en la siguiente tabla.
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{4.5cm}|m{7.1cm}|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Sustancia & Características de las gotas \\ \hline
+Etanol ($\text{C}_{\text{2}}\text{H}_{\text{5}}\text{OH}$) & Muy achatada y redondeada \\ \hline
+Agua ($\text{H}_{\text{2}}\text{O}$) & Achatada y redondeada \\ \hline
+Glicerina ($\text{C}_{\text{3}}\text{H}_{\text{8}}\text{O}_{\text{3}}$) & Voluminosa y redondeada \\ \hline
+\end{tabular}
+\caption{observaciones de las gotas}
+\label{gota}
+\end{table}
+\newpage
+Por último, las observaciones realizadas respecto al azufre espolvoreado sobre los diferentes líquidos son las representadas a continuación.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|m{3.4cm}|m{3.9cm}|m{3.9cm}|}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Líquido & Antes del detergente & Después del detergente \\ \hline
+Agua ($\text{H}_{\text{2}}\text{O}$) & El azufre se mantiene en la superficie. & \begin{flushleft}El azufre cae rápidamente hacia el fondo.\end{flushleft} \\ \hline
+Glicerina ($\text{C}_{\text{3}}\text{H}_{\text{8}}\text{O}_{\text{3}}$) & El azufre se mantiene en la superficie. & \begin{flushleft}El azufre cae muy lentamente hacia el fondo.\end{flushleft}\\ \hline
+Etanol ($\text{C}_{\text{2}}\text{H}_{\text{5}}\text{OH}$) & \begin{flushleft}El azufre no se mantiene en la superficie.\end{flushleft} & \begin{center}{-}{-}{-}\end{center} \\ \hline
+\end{tabular}
+\caption{observaciones al espolvorear azufre}
+\label{azufre}
+\end{table}
+
+\section{Conclusiones}
+
+A partir de los resultados obtenidos en la primera parte de la actividad experimental, es clara la relación entre la presión de vapor y la volatilidad: a mayor presión de vapor, mayor volatilidad, y a menor presión de vapor, menor volatilidad, es decir existe una proporcionalidad de acuerdo al comportamiento de estos dos fenómenos físicos.
+\\
+\\
+En lo que concierne a la segunda parte, también se destaca una relación de proporcionalidad entre la temperatura y la viscosidad de los fluidos. Apoyándonos en los resultados es posible concluir que, a mayor temperatura, menor viscosidad; y a menor temperatura, mayor viscosidad.
+\\
+\\
+Finalmente, en la tercera parte de esta actividad, pudimos observar como en el líquido con menor tensión superficial, en este caso el etanol, al ser espolvoreada su superficie con azufre, el mismo caía rápidamente al fondo del recipiente sin necesidad de colocar detergente para romper la tensión. En cambio, esto no sucedía con el agua, a la cual sí había que colocarle detergente para romper la tensión y que de esta forma caiga el azufre. Esto se debe a que el agua, debido a los puentes de hidrógeno formados entre sus moléculas, presenta mucho mayores fuerzas intermoleculares que el etanol. Aún más claro se ve esto en la glicerina, siendo notoria la baja velocidad con la que caía el azufre debido a la alta viscosidad de la misma.
+
+\section{Bibliografía}
+
+Daintith, J. (Ed.). (2008). \textit{A dictionary of chemistry.} Oxford University Press.
+\\
+\\
+Brown, T. L., LeMay Jr, H. E., Bursten, B. E., \& Burdge, J. R. (2013). \textit{Química: la ciencia central.} Pearson.
+
+\end{document}
