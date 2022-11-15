@@ -1,0 +1,141 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{unicode-math}
+\usepackage{csquotes}
+
+\sisetup{parse-numbers=false}
+\setlength\parindent{0pt}
+\setlength\parskip{11pt}
+\tolerance=9999
+\hyphenpenalty=10000
+\exhyphenpenalty=100
+\graphicspath{ {./images/} }
+
+\title{Calor Latente Específico de Fusión del Hielo}
+\author{Martín Vázquez, Matias Vicente y Guillermo Wajner}
+\date{28 de agosto de 2022}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+
+El presente informe ha sido desarrollado en base a los datos obtenidos en la toma experimental de medidas a partir del proceso de fusión del agua sólida, con el propósito de hallar el calor latente específico de fusión del hielo.  
+
+\section{Objetivo}
+
+Determinar el calor latente de fusión del hielo a partir de la toma de datos del proceso de fusión de un conjunto de bloques de hielo.
+
+\section{Marco Teórico}
+
+La materia se presenta en diversos estados de agregación, sin embargo en este experimento solo se involucran los estados sólido y líquido de la materia. 
+
+Los sólidos tienen forma y volumen propio. Las fuerzas de atracción intermoleculares son lo suficientemente intensas para mantener juntas las moléculas. Al igual que los líquidos presentan una baja compresibilidad ya que entre las moléculas no hay espacio libre.
+
+Los líquidos no tienen forma propia pero si volumen. Las fuerzas de atracción intermoleculares son fuertes como para mantener juntas las moléculas pero no tienen la intensidad suficiente para evitar que las moléculas se mueven unas respectó a otras. Son mucho más densos y menos compresibles que los gases.
+
+Si dos sistemas con temperaturas diferentes se encuentran en contacto térmico, el calor siempre fluirá entre ellas desde aquel con mayor temperatura hacia el otro. Esto se da hasta que la temperatura de ambos sistemas alcancen la igualdad, condición conocida como equilibrio térmico.
+
+El calor latente de fusión de un sólido ($l_f$) es la cantidad de energía requerida para fundir una unidad de masa de sustancia sólida.
+
+\begin{equation}
+    \label{lf}
+    l_f=\frac{Q}{m}\implies Q=m\times l_f
+\end{equation}
+
+El calor específico ($c_e$) de una sustancia en un estado de agregación determinado corresponde a la cantidad de energía requerida para obtener un cambio de una unidad de temperatura en una unidad de masa de la misma.
+
+\begin{equation}
+    \label{ce}
+    c_e=\frac{Q}{m\times\varDelta T} \implies Q=c_e\times m\times\varDelta T
+\end{equation}
+
+Es sabido el calor específico del agua tanto en su estado liquido ($c_l$) como sólido ($c_s$):
+
+\begin{equation*}
+    c_l=\text{\SI{4,2}{\joule\per\gram\per\kelvin}}\text{\hphantom{lol}y\hphantom{lol}}c_s=\text{\SI{2,1}{\joule\per\gram\per\kelvin}}
+\end{equation*}
+
+\section{Procedimiento}
+
+Como recipiente para el experimento fue utilizada una lata, con un calor específico bajo para poder negligir la energía absorbida por esta. Este fue ``aislado'' utilizando un contenedor de espuma.
+
+En primer lugar fue medida la masa del agua introducida en el recipiente. Luego fueron determinadas las temperaturas del agua y del hielo a introducir. Al introducir el hielo en el recipiente fue determinada su masa.
+
+Una vez fundido completamente el hielo, fueron dejados pasar unos minutos para permitir que el sistema alcanze equilibrio térmico. Luego fue medida la temperatura del contenido final del recipiente.
+
+\section{Datos Obtenidos}
+
+Dos iteraciones del procedimiento fueron realizadas variando entre estas las masas de hielo y agua utilizadas de las cuales fueron obtenidos los siguientes valores:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+        \hline
+        \rowcolor[HTML]{C0C0C0} 
+        Iteración (\#) & $m_a$ (g) & $m_h$ (g) & $T_a$ (K) & $T_h$ (K) & $T_f$ (K) \\ \hline
+        1         &  136,9  &  18,4  &  293,0  &  263,0  &  281,0  \\ \hline
+        2         &  154,6  &  12,1  &  293,0  &  263,0  &  285,5  \\ \hline
+    \end{tabular}
+    \caption{Datos Obtenidos}
+    \label{table:mediciones}
+\end{table}
+
+
+\section{Procesamiento de Datos}
+
+En primer lugar serán realizados los cálculos utilizando las medidas obtenidas en la iteración 1. Para calcular el calor necesario para llevar la masa inicialmente líquida de \SI{293}{\kelvin} a \SI{281}{\kelvin} fue utilizada la ecuación \ref{ce}.
+
+$$
+Q_a=\SI{4,2}{\joule\per\gram\per\kelvin}\times\SI{136,9}{\gram}\times\SI{(281-293)}{\kelvin}=\SI{-6866,8}{\joule}
+$$
+
+Para calcular el calor necesario para llevar la masa inicialmente sólida de \SI{263}{\kelvin} a \SI{281}{\kelvin} dividimos este en tres partes: $Q_1$ para llevar el sólido hasta \SI{273}{\kelvin}, $Q_2$ para fundir el sólido y $Q_3$ para llevar el ahora líquido hasta \SI{281}{\kelvin}.
+
+$$
+Q_b=Q_1+Q_2+Q_3
+$$
+
+Sustituyendo con las ecuaciones \ref{ce} para $Q_1$ y $Q_3$ y \ref{lf} para $Q_2$, e insertando los valores de la primera iteración del cuadro \ref{table:mediciones} se cumple lo siguiente:
+
+$$
+Q_b=\SI{1004,6}{\joule}+\SI{18,4}{\gram}\times l_{f_{\text{hielo}}}
+$$
+
+\newpage
+
+Debido a que el sistema de estudio es aislado con dos componentes a diferentes temperaturas, podemos decir que el calor recibido por el componente de menor temperatura (inicialmente sólido) será igual al liberado por el componente de mayor temperatura (inicialmente líquido). Esto queda expresado de la siguiente manera:
+
+$$
+Q_a+Q_b=0
+$$
+
+Entonces, remplazando $Q_a$ y $Q_b$ por los valores calculados,
+
+$$
+\SI{-6866,8}{\joule}+\SI{1004,6}{\joule}+\SI{18.4}{\gram}\times l_{f_{\text{hielo}}}=0\implies l_{f_{\text{hielo}}}=\SI{318,6}{\joule\per\gram}
+$$
+
+Si repetimos este procedimiento para las masas utilizadas en la iteración 2 del cuadro \ref{table:mediciones}, la ecuación final queda de la siguiente forma:
+
+$$
+\SI{-4869,9}{\joule}+\SI{889,4}{\joule}+\SI{12,1}{\gram}\times l_{f_{\text{hielo}}}=0\implies l_{f_{\text{hielo}}}=\SI{329,0}{\joule\per\gram}
+$$
+
+Podemos finalmente hallar una aproximación final utilizando la media aritmética de ambos valores obtenidos:
+
+$$
+l_{f_{\text{hielo}}}\approx\SI{\frac{318,6+329,0}{2}}{\joule\per\gram}=\SI{323,8}{\joule\per\gram}
+$$
+
+\section{Conclusi\'{o}n}
+
+Ya con esta aproximación del calor latente de fusión del hielo obtenida es posible compararla con el valor aceptado de la misma, \SI{334}{\joule\per\gram}. Al comparar los valores encontramos que la aproximación experimental hallada se acerca considerablemente al valor real, atribuyendo la pequeña diferencia a errores experimentales. Teniendo en cuenta esto, podemos considerar que el experimento fue exitoso para su cometido dentro de una expectativa razonable.
+
+\end{document}
