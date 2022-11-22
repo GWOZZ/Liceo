@@ -1,0 +1,131 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{enumerate}
+
+\setlength\parindent{0pt}
+\setlength\parskip{11pt}
+\title{Resumen Segundo Parcial Matemática 1}
+\date{\vspace{-5ex}}
+
+\begin{document}
+
+\maketitle
+
+\section*{Función Logarítmica}
+
+\subsection*{Definición:}
+
+$\log_a(b) = c \Longleftrightarrow a^c = b$
+
+$\begin{cases}
+    b > 0 \\
+    a > 0 \\
+    a \neq 1 \\
+\end{cases}$
+
+\subsection*{Propiedades:}
+
+\begin{itemize}
+\item $\log_a(b) + \log_a(c) = \log_a(b\cdot c)$
+\item $\log_a(b) - \log_a(c) = \log_a\left( \dfrac{b}{c} \right)$
+\item $\log_a(b^c) = c \cdot \log_a(b)$
+\item $\log_{a^c}(b) = \dfrac{1}{c}\cdot \log_a(b)$
+\item $\log_a(b) = \dfrac{\log_x(b)}{\log_x(a)}$
+\end{itemize}
+
+\subsection*{Gráfico}
+
+\begin{itemize}
+\item $f(x) = \log_a(x+b) \Longleftrightarrow f(x) = \mathscr{T}_{-\vec{b}} \log_a(x)$
+
+\item $a > 1 \Longleftrightarrow f(x)$ es creciente y $a < 1 \Longleftrightarrow f(x)$ es decreciente.
+
+\item $\begin{cases}
+    (1,0) \\
+    (a,1) \\
+\end{cases} \in \; \; y = \log_a(x)$
+
+\end{itemize}
+
+\newpage
+
+\section*{Geometría Analítica}
+
+Para una circunferencia $\mathscr{C}$ de centro $O (\alpha , \beta)$ radio $r$ y diámetro $AB$:
+
+\begin{itemize}
+    \item $\mathscr{C} : (x-\alpha )^{2}+(y-\beta )^{2}=r^{2}$
+    \item $\mathscr{C} : x^2 + y^2 + ax + by + c = 0 \;$ tal que $\begin{cases} a = -2\alpha \\ b = -2\beta \\ r = \sqrt{\dfrac{a^2+b^2}{4} - c}\end{cases}$
+    \item $\mathscr{C} : (x-x_{A})(x-x_{B})+(y-y_{A})(y-y_{B})=0$
+    \item $\text{tg}_P : x_P x + y_P y + a\left(\dfrac{x+x_P}{2}\right) + b\left(\dfrac{y+y_P}{2}\right) + c = 0$
+    \item $d(Q,\mathscr{C}) = d(Q,O)-r$
+\end{itemize}
+
+
+Para una recta $r$:
+
+\begin{itemize}
+    \item $r : ax + by + c = 0$
+    \item $r : y = mx + n$ tal que $\begin{cases} m = -\frac{a}{b} \\ n = -\frac{c}{b}\end{cases}$
+    \item $P \in \; r \Longleftrightarrow r : y - y_P = m (x - x_P)$
+    \item $A(a,0) \text{ y } B(0,b) \in \; r \Longleftrightarrow r : \dfrac{x}{a} + \dfrac{y}{b} = 1$
+    \item $d(P,r) = \dfrac{\lvert x_Pa + y_Pb + c \rvert}{\sqrt{a^2 + b^2}}$
+    \item $A \text{ y } B \in \; r \Longleftrightarrow r : \dfrac{y-y_A}{x-x_A} = \dfrac{y_B-y_A}{x_B-x_A}$
+\end{itemize}
+
+\newpage
+
+\section*{Complejos}
+
+\subsection*{Unidad Imaginaria}
+
+$i = \sqrt{-1}$
+
+$i^n = i^k \Longleftrightarrow n \equiv k \mod{4}$
+
+\subsection*{Notación}
+
+\begin{itemize}
+    \item Binómica: $Z = a + bi$
+    \item Cartesiana: $Z = (a,b)$
+    \item Polar: $Z = (\rho\angle\theta)$ tal que $\begin{cases} \rho = \sqrt{a^2+b^2} \\ \theta = \arctan (\dfrac{b}{a})\end{cases}$
+    \item Trigonométrica $Z = (\rho\cos\theta + (\rho\sin\theta)i)$
+\end{itemize}
+
+\subsection*{Operaciones}
+
+\begin{itemize}
+\item Inverso:
+
+\vspace{5pt}
+$Z^{-1} = \dfrac{a}{a^2+b^2} + \dfrac{-b}{a^2+b^2} i$
+
+\item Conjugado:
+
+\vspace{5pt}
+$Z=a+bi \Longleftrightarrow \bar{Z}=a-bi$
+
+\item Suma:
+
+\vspace{5pt}
+$Z + Z' = (a + a') + (b + b')i$
+
+\item Producto:
+
+\vspace{5pt}
+$Z \cdot Z' = (aa' + bb') + (ab' + a'b)i$
+
+\item Potencia (Teorema de Moivre):
+
+\vspace{5pt}
+$Z = (\rho\angle\theta) \Longrightarrow Z^n = \rho^n (\cos(n\theta)+\sin(n\theta)i)$
+
+\item Raiz:
+
+\vspace{5pt}
+$\sqrt[n]{(\rho\angle\theta)} = (\rho'\angle\theta') \;$ tal que $\; \begin{cases} \rho' = \sqrt[n]{\rho} \\ \theta' = \dfrac{\theta + 2k\pi}{n}\end{cases}$ $k \in \mathbb{N} \;$ y $\; 0 \leq k \leq n - 1$
+\end{itemize}
+
+\end{document}
