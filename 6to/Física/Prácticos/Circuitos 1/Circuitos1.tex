@@ -1,0 +1,217 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{lmodern, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{circuitikz}
+\usepackage{float}
+
+\makeatletter
+\providecommand\add@text{}
+\newcommand\tagaddtext[1]{%
+  \gdef\add@text{#1\gdef\add@text{}}}% 
+\renewcommand\tagform@[1]{%
+  \maketag@@@{\llap{\add@text\quad}(\ignorespaces#1\unskip\@@italiccorr)}%
+}
+\makeatother
+
+\title{Circuitos, Leyes de Kirchhoff y más...}
+\author{V. Angeloro, J. Quiroga, M. Vicente y G. Wajner}
+\date{May 2023}
+\setlength{\parskip}{10pt}
+
+\begin{document}
+
+\maketitle
+
+\section{Objetivo}
+
+Familiarizarnos con el comportamiento y funcionamiento de los circuitos eléctricos y llevar a la práctica los conceptos dados en clase.
+
+\section{Marco Teórico}
+
+Entiéndase por circuito un sistema eléctrico que puede ser formado por diversos componentes conectados mediante conductores.
+
+Cuando los elementos de un circuito se conectan uno tras otro perteneciendo a una sola trayectoria cerrada o malla a través de la cual fluye la corriente, se le denomina circuito en serie.
+
+Como caso opuesto, los elementos de un circuito pueden pertenecer a diferentes mallas. En este caso, donde la corriente puede recorrer diferentes trayectorias cerradas, decimos que los elementos están conectados en paralelo.
+
+Dentro de las propiedades de interés analítico para los sistemas en cuestión se encuentran la intensidad de corriente y la variación del potencial eléctrico.
+
+Se define la intensidad de corriente ($i$) como el cociente entre la carga ($q$) que atraviesa una sección transversal del conductor y el tiempo que demora en hacerlo ($\Delta t$). La expresión es la siguiente:
+
+\begin{equation}
+\label{eq:Intensidad}
+i= \frac{q}{\Delta t}   
+\tagaddtext{[\si{\ampere} = \si{\coulomb}/\si{\second}]}
+\end{equation} 
+
+\hfill
+
+El potencial eléctrico ($V$) se define como el trabajo ($W$) necesario para mover una carga eléctrica desde un punto de referencia hasta un punto específico en un campo eléctrico, dividido entre la magnitud de la carga ($q$). Esto se expresa de la siguiente forma:
+
+\begin{equation}
+\label{eq:Potencial Eléctrico}
+V=\frac{W}{q}
+\tagaddtext{[\si{\volt} = \si{\joule}/\si{\coulomb}]}
+\end{equation}
+
+Por otro lado, la variación de potencial eléctrico ($\Delta V$) entre dos puntos $i$ y $f$ en un circuito se define como el trabajo necesario para mover una carga eléctrica entre esos dos puntos ($W_{i,f}$), dividido entre la magnitud de la carga $q$. Matemáticamente, se puede expresar como:
+
+\begin{equation}
+\label{eq:Variación Potencial Eléctrico}
+\Delta V=\frac{W_{i, f}}{q}=\frac{W_f - W_i}{q}
+\end{equation}
+
+Fuertemente vinculadas a estas magnitudes se encuentran la primer y segunda ley de Kirchhoff
+
+La primera ley de Kirchhoff o ley de nodos describe que en una conexión de dos o más cables en un punto, la suma de las intensidades de corriente a través de cada cable en el punto es cero asumiendo signos opuestos para las intensidades de corrientes entrantes y salientes. Simplemente representado el postulado sería:
+
+\begin{equation}
+\label{eq:1a Ley}
+\sum_{k=1}^{n} i_k = 0
+\end{equation}
+
+Como corolario, la suma de las intensidades de corriente entrantes a un nodo de un circuito es igual a la suma de las salientes.
+
+Por otro lado, la segunda ley de Kirchhoff o ley de mallas regla dicta que la suma de las diferencias de potencial $\Delta V$ a través de cada elemento de la malla cerrada es cero.
+
+\begin{equation}
+\label{eq:2a Ley}
+\sum_{k=1}^{n} \Delta V_k = 0
+\end{equation}
+
+Esto quiere decir que la suma total de los incrementos de potencial será igual a la suma total de las disminuciones de potencial en una malla cerrada.
+
+\section{Materiales}
+
+A continuación se encuentran los materiales utilizados en la actividad experimental:
+
+\begin{itemize}
+  \item[-] Voltímetro
+  \item[-] Amperímetro
+  \item[-] Lamparitas
+  \item[-] Fuente
+  \item[-] Cables
+\end{itemize}
+
+\section{Procedimiento}
+
+En primer lugar fue creado un circuito en serie, con la forma mostrada a continuación. 
+
+\begin{figure}[H]
+\begin{center}\begin{circuitikz}\draw
+  (0,0) to[lamp] ++(0,2)
+  (0,2) to[battery1] ++(3.5,0)
+  (3.5,2) to[lamp] ++(0,-2)
+  (0,0) to[short] ++(3.5,0)
+;\end{circuitikz}\end{center}
+\caption{Circuito 1 (lamparas en serie)} \label{fig:C2}
+\end{figure}
+
+Luego se midió la intensidad de corriente y la variación de potencial eléctrico en distintos tramos del circuito.
+
+Posteriormente fue elaborado el circuito 2 presente debajo y fue repetido el proceso. 
+
+\begin{figure}[H]
+\begin{center}\begin{circuitikz}\draw
+  (4,0) to[short] ++(-4,0)
+  to[battery1] ++(0,2)
+  (2,0) to[lamp] ++(0,2)
+  (4,0) to[lamp] ++(0,2)
+  (0,2) to[short] ++(4,0)
+;\end{circuitikz}\end{center}
+\caption{Circuito 2 (lamparas en paralelo)} \label{fig:C2}
+\end{figure} 
+
+\section{Datos Obtenidos}
+
+En los gráficos a continuación se indican las posiciones de las medidas tomadas. Con circulos blancos estan indicadas las posiciones del voltímetro y con circulos negros estan indicadas las posiciones del amperímetro.
+
+\begin{figure}[H]
+\begin{center}\begin{circuitikz}\draw
+  (0,0) to[battery1] ++(0,3)
+  (4,3) to[short] ++(1,0)
+  to[short] ++(0,-3)
+  to[short] ++(-1,0)
+  (0,0) to[short] ++(2,0)
+  to[short] ++(0,1)
+  to[short] ++(2,0)
+  to[short] ++(0,-1)
+  (4,3) to[short] ++(0,-1)
+  to[short] ++(-2,0)
+  to[short] ++(0,1)
+  to[lamp] ++(2,0)
+  (0,2.5) to[short] ++(-1.5,0)
+  to[short] ++(0,-2)
+  to[short] ++(1.5,0)
+  (0,3) to[short] ++(2,0)
+  (2,0) to[lamp] ++(2,0)
+  (1,0) node[circ,scale=1.5]{}
+  (1,3) node[circ,scale=1.5]{}
+  (5,1.5) node[circ,scale=1.5]{}
+  (-1.5,1.5) node[ocirc,scale=1.5]{}
+  (3,1) node[ocirc,scale=1.5]{}
+  (3,2) node[ocirc,scale=1.5]{};
+\end{circuitikz}\end{center}
+\caption{Medidas Circuito 1} \label{fig:M1}
+\end{figure} 
+
+En este circuito, todas las intensidades obtenidas con el amperimetro fueron de \SI{140}{\milli\ampere}. Con el voltímetro se obtuvo que la diferencia de potencial entre los bornes es \SI{-9}{\volt} y entre los extremos de ambas lamparitas es \SI{4,5}{\volt}.
+
+\begin{figure}[H]
+\begin{center}\begin{circuitikz}\draw
+  (0,3) to[short] ++(6,0)
+  to[lamp] ++(0,-3)
+  (0,0) to[battery1] ++(0,3)
+  (1.5,2.5) to[short] ++(0,-2)
+  to[short] ++(1.5,0)
+  (6,2.5) to[short] ++(-1.5,0)
+  (4.5,2.5) to[short] ++(0,-2)
+  (4.5,0.5) to[short] ++(1.5,0)
+  (0,2.5) to[short] ++(-1.5,0)
+  (-1.5,2.5) to[short] ++(0,-2)
+  (-1.5,0.5) to[short] ++(1.5,0)
+  (0,0) to[short] ++(6,0)
+  (3,3) to[lamp] ++(0,-3)
+  (1.5,2.5) to[short] ++(1.5,0)
+  (1.5,3) node[circ,scale=1.5]{}
+  (1.5,0) node[circ,scale=1.5]{}
+  (6,0.5) node[circ,scale=1.5]{}
+  (6,2.5) node[circ,scale=1.5]{}
+  (3,0.5) node[circ,scale=1.5]{}
+  (3,2.5) node[circ,scale=1.5]{}
+  (-1.5,1.5) node[ocirc,scale=1.5]{}
+  (1.5,1.5) node[ocirc,scale=1.5]{}
+  (4.5,1.5) node[ocirc,scale=1.5]{};
+;\end{circuitikz}\end{center}
+\caption{Medidas Circuito 2} \label{fig:M2}
+\end{figure}
+
+En el segundo circuito, las intensidades medidas en los cables unidos a los bornes fueron de \SI{800}{\milli\ampere}, mientras que las medidas a través de las lamparitas fueron ambas de \SI{400}{\milli\ampere}. Con el voltímetro se obtuvo que la diferencia de potencial entre los bornes es \SI{-9}{\volt} y entre los extremos de ambas lamparitas es \SI{9}{\volt}.
+
+\section{Procesamiento de Datos}
+
+\subsection{Circuito 1}
+
+En el primer circuito, la intensidad de corriente eléctrica antes de la primera lamparita es de \SI{140}{\milli\ampere}. Considerando que este es un circuito en serie, la intensidad entre las lamparitas y después de las lamparitas debería ser igual al primer caso. Esto es confirmado por las mediciones realizadas. Es posible concluir entonces, que para un circuito en serie, la intensidad de corriente es constante a lo largo del mismo.
+
+La diferencia de potencial entre los bornes de la fuente es de -9 V. La diferencia de potencial entre los extremos de una lamparita es de 4,5 V. Considerando lo establecido por la Ley de Mallas, es posible predecir que la diferencia de potencial entre los extremos de la otra lamparita será también \SI{4,5}{\volt}, pues sustituyendo en la ecuación \ref{eq:2a Ley}, obtenemos que $\SI{-9}{\volt} + \SI{4,5}{\volt} + \SI{4,5}{\volt} = 0$, lo cual es cierto. Esto nuevamente es verificado por las mediciones realizadas.
+
+Con esta información concluimos que en un circuito en serie, las diferencias de potencial entre los extremos de los componentes son opuestas a la diferencia de potencial entre los bornes de la fuente. 
+
+\subsection{Circuito 2}
+
+En el circuito 2, la intensidad de corriente eléctrica a través de cada lamparita es de \SI{400}{\milli\ampere}. Considerando la Ley de Nodos de Kirchhoff, podemos asumir que la intensidad de corriente a través de uno de los cables conectados a la fuente es de 800 mA, pues para los nodos en que se unen los circuitos parlelos podemos utilizar el corolario de la ecuación \ref{eq:1a Ley}. De esta forma obtenemos que $\SI{400}{\milli\ampere} + \SI{400}{\milli\ampere} = \SI{800}{\milli\ampere}$. Una vez más, las mediciones verifican la predicción.
+
+Notese que la intensidad en todo punto de la malla que comprende ambas lamparitas, es la exactamente la mitad de la intensidad en los cables unidos a la fuente.
+
+La diferencia de potencial entre los bornes de la fuente es de \SI{-9}{\volt}. Por lo tanto, considerando nuevamente la Ley de Mallas, podemos asumir que la diferencia de potencial en los extremos de ambas lamparitas será \SI{9}{\volt}. Ya por última vez, las mediciones verifican este resultado. Entonces concluimos que la diferencia de potencial de los bornes de la fuente es opuesta a la de los extremos de cada división del circuito.
+
+\section{Conclusión}
+
+Mediante la actividad experimental hemos logrado verificar las predicciones de las Leyes de Kirchhoff (Nodos y Mallas), y las propiedades de los circuitos en serie y en paralelo, satisfactoriamente familiarizándonos con los temas abordados.
+
+\end{document}
