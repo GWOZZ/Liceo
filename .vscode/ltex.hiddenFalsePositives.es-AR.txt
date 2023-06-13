@@ -1,0 +1,1 @@
+{"rule":"EL_TILDE","sentence":"^\\QEl\\E$"}

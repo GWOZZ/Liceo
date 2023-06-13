@@ -37,8 +37,8 @@ contour = plt.contourf(xi, yi, zi, num_levels, cmap=cm.viridis, zorder=0)  # Set
 scatter = plt.scatter(x1, y1, c=z1, cmap=cm.viridis, edgecolors=(0, 0, 0, 0.5), linewidths=1, facecolors=1, zorder=1)
 
 plt.minorticks_on()
-plt.xticks(ticks=[0.0 , 2.0, 4.0, 6.0, 8.0, 10.0, 12.0])
-plt.yticks(ticks=[2.0, 4.0, 6.0, 8.0, 10.0, 12.0])
+plt.xticks(ticks=(tcks:=[0.0 , 2.0, 4.0, 6.0, 8.0, 10.0, 12.0]))
+plt.yticks(ticks=tcks)
 plt.xlabel(r"$x \pm \delta x \;\mathrm{(cm)}$")
 plt.ylabel(r"$y \pm \delta x \;\mathrm{(cm)}$")
 plt.colorbar(label=r'$\Delta V \pm \delta \Delta V \;\mathrm{(V)}$', extend='both', ticks=[2.5, 4.0, 6.0, 8.0, 10.0, 12.0])
@@ -50,4 +50,5 @@ for i in range (5):
     models.append(np.poly1d(np.polyfit(x[:3], y[3*i:3*i+3], 1)))
     plt.plot(np.linspace(-0.5, 13.5, 50), models[i](np.linspace(-0.5, 13.5, 50)), color='red', alpha=0.5)
 
+plt.savefig('plot1.png', dpi=300)
 plt.show()
