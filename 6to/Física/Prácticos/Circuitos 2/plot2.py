@@ -18,15 +18,12 @@ y1 =  [y[:66]]
 
 z1 = [z[:66]]
 
-plt.rcParams.update({
-    "text.usetex": True})
-
 grid_resolution = 500
 xi = np.linspace(min(x), max(x), grid_resolution)
 yi = np.linspace(min(y), max(y), grid_resolution)
 xi, yi = np.meshgrid(xi, yi)
 
-zi = griddata((x, y), z, (xi, yi), method='linear')
+zi = griddata((x, y), z, (xi, yi), method='linear', fill_value=0)
 
 num_levels = 100
 contour = plt.contourf(xi, yi, zi, num_levels, cmap=cm.viridis, zorder=0)
@@ -37,11 +34,10 @@ plt.minorticks_on()
 plt.xticks(ticks=(tcks:=[0.0 , 2.0, 4.0, 6.0, 8.0, 10.0, 12.0]))
 plt.yticks(ticks=tcks)
 plt.xlabel(r"$x \pm \delta x \;\mathrm{(cm)}$")
-plt.ylabel(r"$y \pm \delta x \;\mathrm{(cm)}$")
+plt.ylabel(r"$y \pm \delta y \;\mathrm{(cm)}$")
 plt.colorbar(label=r'$\Delta V \pm \delta \Delta V \;\mathrm{(V)}$', extend='both', ticks=[2.5, 4.0, 6.0, 8.0, 10.0, 12.0])
 plt.xlim([-0.5, 13.5])
 plt.ylim([0, 14])
-
 
 models = []
 for i in range (6):

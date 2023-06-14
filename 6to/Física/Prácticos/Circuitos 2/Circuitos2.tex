@@ -106,7 +106,7 @@
 
 \section{Objetivo}
 
-Determinar las características del vector campo eléctrico entre dos placas conductoras paralelas cargadas y entre dos cuerpos conductores cargados de forma cualquiera.
+Determinar las características del vector campo eléctrico entre dos placas conductoras paralelas cargadas y entre dos placas y un cuerpo conductor cargado de forma cualquiera.
 
 \section{Marco Teórico}
 
@@ -119,8 +119,7 @@ Para verificar la presencia del campo eléctrico se coloca una partícula cargad
 Entonces, el campo eléctrico ($\vec{E}$) se define como el cociente  entre la fuerza de origen eléctrico ($\vec{F_e}$) que actúa sobre la carga de prueba $q_0$, y la carga de prueba.
 
 \begin{equation*}
-  \vec{E} = \frac{\vec{F_e}}{q_0}
-  \tagaddtext{[E] = \si{\newton}/\si{\coulomb}}
+  \vec{E} = \frac{\vec{F_e}}{q_0} = \frac{q}{4 \pi \epsilon_0 r^2} \; \hat{r}
 \end{equation*}
 
 Es una magnitud vectorial, ya que surge del cociente entre una magnitud vectorial y una magnitud escalar. La dirección y sentido del campo eléctrico son iguales a los de la fuerza eléctrica.
@@ -227,7 +226,6 @@ El potencial eléctrico es una magnitud correspondiente a la energía potencial 
 
 \begin{equation*}
   W = F \times \Delta r \times \cos{\theta}
-  \tagaddtext{[W] = \si{\joule} = \si{\newton}\times\si{\meter}}
 \end{equation*}
 
 El trabajo se puede definir según el desplazamiento ($\Delta r$) y no la trayectoria, ya que la fuerza eléctrica es conservativa. Considerando esto, podemos decir que depende exclusivamente de una propiedad asociada con $q_0$ en las posiciones A y B. Esto es lo que llamamos energía potencial eléctrica. El trabajo realizado por la fuerza eléctrica en este caso va a ser opuesto a la variación de energía potencial eléctrica entre A y B.
@@ -240,9 +238,10 @@ Entonces la diferencia de potencial eléctrico es la variación de energía pote
 
 En un campo eléctrico uniforme, la diferencia de potencial eléctrico se puede calcular de la siguiente manera:
 
-\begin{equation*}
+\begin{equation}
   \Delta V = \lvert \vec{E} \rvert \times \Delta r
-\end{equation*}
+  \label{eq:DelV}
+\end{equation}
 
 Siendo $\lvert \vec{E} \rvert$ la magnitud del campo eléctrico y $\Delta r$ la distancia entre los dos puntos en consideración. Entonces para un campo eléctrico uniforme la diferencia de potencial eléctrico es directamente proporcional a la intensidad del campo eléctrico y a la distancia entre los puntos. Si tomamos como referencia la fuente del campo eléctrico uniforme, entonces todo punto a una distancia $r_0$ tendrá la misma diferencia de potencial eléctrico. Esto significa que pertenecen a una línea equipotencial.
 
@@ -250,7 +249,7 @@ Las líneas equipotenciales son líneas donde el potencial eléctrico es constan
 
 Las líneas equipotenciales pueden ser rectas, curvas o de forma irregular, dependiendo de la forma y orientación de las cargas que las originan. Al estar ubicadas radialmente paralelas a un cuerpo cargado, son perpendiculares a las líneas de campo eléctrico, las cuales se extienden radialmente desde el centro de un cuerpo cargado.
 
-En la figura a continuación el potencial en el punto C va a ser igual al potencial eléctrico en el punto B
+En la figura a continuación el potencial eléctrico en el punto C va a ser igual al potencial eléctrico en el punto B
 
 \phantom{x}
 
@@ -310,11 +309,28 @@ En la figura a continuación el potencial en el punto C va a ser igual al potenc
 
 Este concepto se expande análogamente a las tres dimensiones con las superficies equipotenciales, que comparten propiedades con las líneas
 
-Por último, el gradiente de potencial eléctrico es el vector que representa la relación entre la diferencia de potencial eléctrico y la posición en el campo eléctrico.
+Por último, el gradiente de potencial eléctrico ($\vec{\nabla} V$) es el vector que representa la relación entre la diferencia de potencial eléctrico y la posición en el campo eléctrico.
 
-El gradiente de potencial eléctrico proporciona información sobre la dirección y tasa de variación del potencial eléctrico en cada punto del campo. Si el gradiente es grande, significa que hay una variación rápida del potencial eléctrico en esa dirección, mientras que un gradiente pequeño indica una variación más gradual.
+El gradiente ($\vec{\nabla} V$) como concepto matemático se define como la tasa de variación local respecto a un desplazamiento. Para tres dimensiones cartesianas, el gradiente ($\vec{\nabla}$) se describe de la siguiente manera:
 
-\vfill
+\begin{equation*}
+	\vec{\nabla} = \hat{i} \; \frac{\partial}{\partial x} + \hat{j} \; \frac{\partial}{\partial y} + \hat{k} \; \frac{\partial}{\partial z}
+\end{equation*}
+
+El gradiente de potencial eléctrico  proporciona información sobre la dirección y tasa de variación del potencial eléctrico en cada punto del campo. Si el gradiente es grande, significa que hay una variación rápida del potencial eléctrico en esa dirección, mientras que un gradiente pequeño indica una variación más gradual.
+
+Considerando la ecuación \ref{eq:DelV} establecida para $\Delta V$, como corolario se establece la siguiente igualdad:
+
+\begin{equation*}
+    |\Vec{E}| = \frac{\Delta V}{\Delta r}
+\end{equation*}
+
+El argumento presente del lado derecho de la igualdad, para $\Delta r \rightarrow \partial r$ corresponde al gradiente del potencial eléctrico. Entonces la magnitud del campo eléctrico en un punto es igual a la magnitud del gradiente de potencial eléctrico en el mismo punto:
+
+\begin{equation}
+    |\Vec{E}| = |\vec{\nabla} V|
+    \label{eq:MagE}
+\end{equation}
 
 \section{Materiales}
 
@@ -421,8 +437,9 @@ El gradiente de potencial eléctrico proporciona información sobre la direcció
 Las mediciones obtenidas en la parte A se encuentran graficadas a continuación representadas con nodos. En rojo se representan las líneas equipotenciales correspondientes, obtenidas realizando regresiones lineales de los puntos. 
 
 \begin{figure}[H]
-  \hspace{-0.1cm}\includegraphics[scale=0.8]{plot1.png}
+  \hspace{-0.1cm}\includegraphics[scale=0.2]{plot1.png}
   \caption{Mediciones y Líneas Equipotenciales Parte A}
+\label{fig:leqA}
 \end{figure}
 
 Observando las líneas equipotenciales es posible deducir que las mismas son paralelas si se dejan de lado errores experimentales.
@@ -431,6 +448,7 @@ Recordando que los vectores de campo eléctrico son perpendiculares a las línea
 
 \phantom{x}
 
+\begin{figure}[H]
 \centerline{\hspace{0.5cm}\begin{tikzpicture}[scale=0.8]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (25) at (1, 1) {};
@@ -471,13 +489,29 @@ Recordando que los vectores de campo eléctrico son perpendiculares a las línea
 		\draw [style=arrow] (94.center) to (114.center);
 	\end{pgfonlayer}
 \end{tikzpicture}}
+\caption{Representación Estimada del Campo Eléctrico Parte A}
+\label{fig:repA}
+\end{figure}
 
 Esta disposición coincide con la representación planteada para el campo eléctrico producido por una línea cargada en el marco teórico.
 
-De igual forma fueron representadas las mediciones obtenidas en la parte B. En este caso, las líneas equipotenciales correspondientes fueron obtenidas realizando interpolaciones cúbicas de los puntos. 
+En cuanto a la magnitud del campo eléctrico en los distintos puntos del plano, es posible hallarla utilizando la ecuación \ref{eq:MagE}, que vincula la magnitud del vector campo eléctrico con el gradiente de potencial. Si graficamos esta información de forma similar a la ya utilizada el resultado es este:
 
 \begin{figure}[H]
-  \hspace{-0.1cm}\includegraphics[scale=0.8]{plot2.png}
+  \hspace{-0.1cm}\includegraphics[scale=0.12]{plot4.png}
+  \caption{Magnitud de Campo Eléctrico Parte A}
+\end{figure}
+
+Esto coincide con el modelo teórico, donde se plantea que la magnitud del campo eléctrico es constante entre dos placas paralelas con cargas opuestas, siempre y cuando se considere que las medidas fuera del entorno entre $\Delta V = 10.0 \;\text{V}$ o ${y} = 12$ cm, y $\Delta V = 2.5$ V o $y = 2$ cm, no fueron medidas (véase la figura \ref{fig:leqA}), y por tanto esta información no corresponde al modelo.
+
+De igual forma fueron representadas las mediciones obtenidas en la parte B. En este caso, las líneas equipotenciales correspondientes fueron obtenidas realizando interpolaciones cúbicas de los puntos.
+
+\vfill
+
+\vspace*{-2cm}
+
+\begin{figure}[H]
+  \hspace{-0.1cm}\includegraphics[scale=0.2]{plot2.png}
   \caption{Mediciones y Líneas Equipotenciales Parte B}
 \end{figure}
 
@@ -487,6 +521,7 @@ Si representamos los vectores de campo eléctrico de igual forma que en el anter
 
 \phantom{x}
 
+\begin{figure}[H]
 \centerline{\hspace{1cm}\begin{tikzpicture}[scale=0.4]
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (3) at (1.5, 0) {};
@@ -545,13 +580,35 @@ Si representamos los vectores de campo eléctrico de igual forma que en el anter
     \draw [style=dashy, rounded corners=3mm] (43.center)--(44.center)--(45.center)--(46.center)--(47.center)--(48.center)--(49.center)--(50.center)--(51.center);
 	\end{pgfonlayer}
 \end{tikzpicture}}
+\caption{Representación Estimada del Campo Eléctrico Parte B}
+\label{fig:repB}
+\end{figure}
 
 Esta disposición de los vectores de campo se asemeja con el resultado teórico de colocar un conductor sin carga en un campo eléctrico uniforme.
 
+Además de verificar la disposición, podemos nuevamente analizar la magnitud del campo eléctrico en el plano. Recurriendo nuevamente a la ecuación \ref{eq:MagE}, obtenemos el siguiente gráfico:
+
+\begin{figure}[H]
+  \hspace{-0.1cm}\includegraphics[scale=0.12]{plot3.png}
+  \caption{Magnitud de Campo Eléctrico Parte B}
+\end{figure}
+
+Considerando que no fueron tomadas medidas por encima de la línea equipotencial $\Delta V = 12.0$ V, ni debajo de $\Delta V = 2.5$ V, (véase la figura \ref{fig:repB}) los datos en estos entornos son no observados. Para la información del entorno observado, este gráfico es coherente con lo esperado segun el diagrama anterior, pues más cerca del centro existe mayor densidad de líneas de campo.
+
 \section{Conclusiones}
 
-Recopilando la información recabada, es posible concluir que, en primer lugar, es posible determinar la disposición de los vectores de campo eléctrico entre dos placas utilizando las líneas equipotenciales. 
+Recopilando la información, concluimos que, en primer lugar, es posible determinar la disposición y magnitudes de los vectores de campo eléctrico entre dos placas utilizando las líneas equipotenciales. 
 
-También se concluye que en la presencia de dos placas cargadas las líneas equipotenciales son paralelas a las placas y los vectores de campo eléctrico son perpendiculares a estas. Por último determinamos que con la presencia de un cuerpo conductor en un campo eléctrico uniforme, las líneas equipotenciales se deforman alrededor del cuerpo y los vectores de campo lo hacen hacia el mismo.
+También se concluye que en la presencia de dos placas cargadas las líneas equipotenciales son paralelas a las placas y los vectores de campo eléctrico son perpendiculares a estas. Otra conclusión que con la presencia de un cuerpo conductor en un campo eléctrico uniforme, las líneas equipotenciales se deforman alrededor del cuerpo y los vectores de campo lo hacen hacia el mismo.
+
+Sobre la magnitud de campo eléctrico, concluímos que estando un cuerpo conductor a menor distancia del origen del campo, mayor es la magnitud del campo eléctrico entre estos.
+
+\section{Bibliografía}
+
+\begin{enumerate}
+    \item Bonda, E. (2010). Electromagnetismo. El Mendrugo.
+    \item Anderson, P. W. P. [@yoprofmatt]. (2016, octubre 9). How to get electric field from electric potential. Youtube.\\https://www.youtube.com/watch?v=vmW7h5YgZL8
+
+\end{enumerate}
 
 \end{document}
